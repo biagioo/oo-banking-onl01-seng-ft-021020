@@ -16,10 +16,12 @@ class Transfer
   end 
   
   def execute_transaction 
-    send = 
+    send = @sender.balance -= amount
+    receive = @receiver.balance += amount
+
     if valid? 
-      @sender.balance -= amount
-      @receiver.balance += amount
+      send 
+      receive
       @status = "complete"
     #elsif 
     end
