@@ -23,7 +23,7 @@ class Transfer
     if valid? 
       transfer
       @status = "complete"
-    elsif @status = "complete"
+    elsif !valid
     !transfer
     end
     
